@@ -13,6 +13,7 @@
         #define vec3 float3
         #define vec4 float4
         #define mat2 float2x2
+        #define mat3 float3x3
         #define iGlobalTime _Time.y
         #define mod fmod
         #define mix lerp
@@ -77,7 +78,7 @@
 			f = f*f*(3.0-2.0*f);
 			
 			vec2 uv = (ip.xy+vec2(37.0,17.0)*ip.z) + f.xy;
-			vec2 rg = texture2D( iChannel0, (uv+ 0.5)/256.0, -100.0 ).yx;
+			vec2 rg = texture2D( iChannel0, (uv+ 0.5)/256.0).yx;
 			return mix(rg.x, rg.y, f.z);
 		}
 		
